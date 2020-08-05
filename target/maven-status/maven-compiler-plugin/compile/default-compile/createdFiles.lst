@@ -1,0 +1,14 @@
+doremi\Rated.class
+doremi\config\kafka\KafkaProcessor.class
+doremi\OrderDeliveryCompleted.class
+doremi\Deleted.class
+doremi\AbstractEvent$1.class
+doremi\MenuDeleted.class
+doremi\MenuScoreApplication.class
+doremi\AbstractEvent.class
+doremi\MenuScoreController.class
+doremi\Saved.class
+doremi\MenuScoreRepository.class
+doremi\PolicyHandler.class
+doremi\Cancelled.class
+doremi\MenuScore.class
