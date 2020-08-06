@@ -77,5 +77,17 @@ import java.util.Optional;
 
    return point;
   }
+   @RequestMapping(value = "/menuscores/select/{id}",
+         method = RequestMethod.POST,
+         produces = "application/json;charset=UTF-8")
+ public void select(@PathVariable("id") Long id) {
+  System.out.println("##### MenuScoreRepository select");
+
+  Optional<MenuScore> score = pointRepo.findById(id);
+
+
+   System.out.println("##### MenuScoreRepository select"+score.get());
+  }
+
 
  }
