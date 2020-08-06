@@ -12,7 +12,7 @@ import java.util.Optional;
  public class MenuScoreController {
   @Autowired
   MenuScoreRepository pointRepo;
-  @PostMapping("/menuscore/save")
+  @PostMapping("/menuscores/save")
   public MenuScore saved(@RequestBody MenuScore postPoint) {
 
    MenuScore point = new MenuScore();
@@ -20,10 +20,16 @@ import java.util.Optional;
    point.setMenuId(postPoint.getMenuId());
    point.setScore(0);
    point.setStatus(postPoint.getStatus());
+   try {
+    System.out.println("##### onPostPersist currentThread : " );
+    Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+   } catch (InterruptedException e) {
+    e.printStackTrace();
+   }
 
    Optional<MenuScore> score = pointRepo.findById(postPoint.getMenuId());
-   if(score!= null){
-    System.out.println("##### MenuScore Exist : " );
+   if(score!= null&& score.isPresent()){
+    System.out.println("##### MenuScore Exist : " +score);
 
    }else{
     pointRepo.save(point);
@@ -34,7 +40,7 @@ import java.util.Optional;
    return point;
   }
 
-  @PostMapping("/menuscore/rate")
+  @PostMapping("/menuscores/rate")
   public MenuScore rated(@RequestBody MenuScore postPoint) {
 
    MenuScore point = new MenuScore();
@@ -59,7 +65,7 @@ import java.util.Optional;
   }
 
 
-  @PostMapping("/menuscore/cancel")
+  @PostMapping("/menuscores/cancel")
   public MenuScore cancelled(@RequestBody MenuScore postPoint) {
 
    MenuScore point = new MenuScore();
@@ -77,5 +83,22 @@ import java.util.Optional;
 
    return point;
   }
+ @RequestMapping(value = "/menuscores/select/{id}",
+         method = RequestMethod.POST,
+         produces = "application/json;charset=UTF-8")
+ //@RequestMapping ("/menuscores/select")
+ public void select(@PathVariable("id") Long id) {
+  System.out.println("##### MenuScoreRepository select"+id);
+
+  Optional<MenuScore> score = pointRepo.findById(id);
+
+  MenuScore printScore =score.get();
+   System.out.println("##### MenuScoreRepository id"+printScore.getId());
+   System.out.println("##### MenuScoreRepository menuId"+printScore.getMenuId());
+   System.out.println("##### MenuScoreRepository score"+printScore.getScore());
+   System.out.println("##### MenuScoreRepository Status"+printScore.getStatus());
+  }
+
+
 
  }
