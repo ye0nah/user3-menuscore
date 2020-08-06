@@ -83,10 +83,12 @@ import java.util.Optional;
 
    return point;
   }
+
  @RequestMapping(value = "/menuscores/select/{id}",
          method = RequestMethod.POST,
          produces = "application/json;charset=UTF-8")
  //@RequestMapping ("/menuscores/select")
+
  public void select(@PathVariable("id") Long id) {
   System.out.println("##### MenuScoreRepository select"+id);
 
@@ -97,7 +99,13 @@ import java.util.Optional;
    System.out.println("##### MenuScoreRepository menuId"+printScore.getMenuId());
    System.out.println("##### MenuScoreRepository score"+printScore.getScore());
    System.out.println("##### MenuScoreRepository Status"+printScore.getStatus());
+
   }
+
+
+  
+
+
 
 
 

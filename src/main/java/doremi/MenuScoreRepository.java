@@ -10,7 +10,4 @@ public interface MenuScoreRepository extends PagingAndSortingRepository<MenuScor
     MenuScore findByMenuIdAndId(Long menuId, Long id);
     List<MenuScore> findByMenuIdOrderByChgDateDesc(Long menuId);
 
-
-
-
 }
