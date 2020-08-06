@@ -52,9 +52,23 @@ public class MenuScore {
 
     @PostUpdate
     public void onPostUpdate(){
-        Cancelled cancelled = new Cancelled();
-        BeanUtils.copyProperties(this, cancelled);
-        cancelled.publishAfterCommit();
+        if(this.getStatus().equals("rated")){
+            System.out.println("##### MenuScore onPostUpdate rated ");
+            Rated rated = new Rated();
+            BeanUtils.copyProperties(this, rated);
+            rated.publishAfterCommit();
+        }else if(this.getStatus().equals("cancelled")){
+            System.out.println("##### MenuScore onPostUpdate cancelled ");
+            Cancelled cancelled = new Cancelled();
+            BeanUtils.copyProperties(this, cancelled);
+            cancelled.publishAfterCommit();
+        }else{
+            System.out.println("##### MenuScore onPostUpdate cancelled ");
+            Cancelled cancelled = new Cancelled();
+            BeanUtils.copyProperties(this, cancelled);
+            cancelled.publishAfterCommit();
+        }
+
 
 
     }
