@@ -81,12 +81,17 @@ import java.util.Optional;
          method = RequestMethod.POST,
          produces = "application/json;charset=UTF-8")
  public void select(@PathVariable("id") Long id) {
-  System.out.println("##### MenuScoreRepository select");
+  System.out.println("##### MenuScoreRepository select"+id);
 
   Optional<MenuScore> score = pointRepo.findById(id);
 
+  MenuScore printScore =score.get();
+   System.out.println("##### MenuScoreRepository id"+printScore.getId());
+   System.out.println("##### MenuScoreRepository menuId"+printScore.getMenuId());
+   System.out.println("##### MenuScoreRepository score"+printScore.getScore());
+   System.out.println("##### MenuScoreRepository Status"+printScore.getStatus());
+  }
 
-   System.out.println("##### MenuScoreRepository select"+score.get());
   }
 
 
