@@ -11,9 +11,6 @@ public interface MenuScoreRepository extends PagingAndSortingRepository<MenuScor
 
     List<MenuScore> findByMenuIdOrderByChgDateDesc(Long menuId);
 
-    default Optional<MenuScore> findById(Long id) {
-        return null;
-    }
 
 
 }
