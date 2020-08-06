@@ -12,7 +12,7 @@ import java.util.Optional;
  public class MenuScoreController {
   @Autowired
   MenuScoreRepository pointRepo;
-  @PostMapping("/menuscores/save")
+  @PostMapping("/menuscore/save")
   public MenuScore saved(@RequestBody MenuScore postPoint) {
 
    MenuScore point = new MenuScore();
@@ -34,7 +34,7 @@ import java.util.Optional;
    return point;
   }
 
-  @PostMapping("/menuscores/rate")
+  @PostMapping("/menuscore/rate")
   public MenuScore rated(@RequestBody MenuScore postPoint) {
 
    MenuScore point = new MenuScore();
@@ -59,7 +59,7 @@ import java.util.Optional;
   }
 
 
-  @PostMapping("/menuscores/cancel")
+  @PostMapping("/menuscore/cancel")
   public MenuScore cancelled(@RequestBody MenuScore postPoint) {
 
    MenuScore point = new MenuScore();
@@ -77,7 +77,7 @@ import java.util.Optional;
 
    return point;
   }
-   @RequestMapping(value = "/menuscores/select/{id}",
+   @RequestMapping(value = "/menuscore/select/{id}",
          method = RequestMethod.POST,
          produces = "application/json;charset=UTF-8")
  public void select(@PathVariable("id") Long id) {
