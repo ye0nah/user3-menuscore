@@ -22,7 +22,7 @@ import java.util.Optional;
    point.setStatus(postPoint.getStatus());
    try {
     System.out.println("##### onPostPersist currentThread : " );
-    Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+    Thread.currentThread().sleep((long) (400 + Math.random() * 320));
    } catch (InterruptedException e) {
     e.printStackTrace();
    }
