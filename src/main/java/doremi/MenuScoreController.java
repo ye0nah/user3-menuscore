@@ -22,8 +22,8 @@ import java.util.Optional;
    point.setStatus(postPoint.getStatus());
 
    Optional<MenuScore> score = pointRepo.findById(postPoint.getMenuId());
-   if(score!= null){
-    System.out.println("##### MenuScore Exist : " );
+   if(score!= null&& score.isPresent()){
+    System.out.println("##### MenuScore Exist : " +score);
 
    }else{
     pointRepo.save(point);
