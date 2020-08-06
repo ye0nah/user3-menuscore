@@ -52,9 +52,9 @@ public class MenuScore {
 
     @PostUpdate
     public void onPostUpdate(){
-        Rated rated = new Rated();
-        BeanUtils.copyProperties(this, rated);
-        rated.publishAfterCommit();
+        Cancelled cancelled = new Cancelled();
+        BeanUtils.copyProperties(this, cancelled);
+        cancelled.publishAfterCommit();
 
 
     }
