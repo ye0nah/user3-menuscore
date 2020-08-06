@@ -90,7 +90,7 @@ import java.util.Optional;
    System.out.println("##### MenuScoreRepository menuId"+printScore.getMenuId());
    System.out.println("##### MenuScoreRepository score"+printScore.getScore());
    System.out.println("##### MenuScoreRepository Status"+printScore.getStatus());
-  }
+  
 
   }
 
