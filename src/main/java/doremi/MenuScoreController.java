@@ -20,12 +20,12 @@ import java.util.Optional;
    point.setMenuId(postPoint.getMenuId());
    point.setScore(0);
    point.setStatus(postPoint.getStatus());
-   try {
-    System.out.println("##### onPostPersist currentThread : " );
-    Thread.currentThread().sleep((long) (400 + Math.random() * 320));
-   } catch (InterruptedException e) {
-    e.printStackTrace();
-   }
+//    try {
+//     System.out.println("##### onPostPersist currentThread : " );
+//     Thread.currentThread().sleep((long) (400 + Math.random() * 320));
+//    } catch (InterruptedException e) {
+//     e.printStackTrace();
+//    }
 
    Optional<MenuScore> score = pointRepo.findById(postPoint.getMenuId());
    if(score!= null&& score.isPresent()){
